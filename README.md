@@ -16,3 +16,9 @@
 <p>
   Após clonar o repositório...
 </p>
+
+## Diretórios
+
+<p>
+  Cada diretório deste repositório...
+</p>
