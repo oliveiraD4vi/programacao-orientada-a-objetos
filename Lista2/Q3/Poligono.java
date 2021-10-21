@@ -8,16 +8,10 @@ class Poligono {
   
   int qntdLados;
   int medidaDoLado;
-  int qntdDeDiagonais;
-  int medidaDoAnguloInterno;
-  int somaDosAngulosInternos;
 
   void inicializaDados(int lados, int medidaLado) {
     qntdLados = lados;
     medidaDoLado = medidaLado;
-    qntdDeDiagonais = calculaNumeroDiagonais();
-    somaDosAngulosInternos = calculaSomaDosAngulosInternos();
-    medidaDoAnguloInterno = somaDosAngulosInternos/qntdLados;
   }
 
   void mostraDados() {
@@ -26,9 +20,9 @@ class Poligono {
     System.out.println("----------------");
     System.out.println("Quantidade de lados: " + qntdLados);
     System.out.println("Medida do lado do polígono: " + medidaDoLado + "cm");
-    System.out.println("Quantidade de diagonais do polígono: " + qntdDeDiagonais);
-    System.out.println("Soma dos ângulos internos do polígono: " + somaDosAngulosInternos);
-    System.out.println("Medida do ângulo interno do polígono " + medidaDoAnguloInterno);
+    System.out.println("Quantidade de diagonais do polígono: " + calculaNumeroDiagonais());
+    System.out.println("Soma dos ângulos internos do polígono: " + calculaSomaDosAngulosInternos());
+    System.out.println("Medida do ângulo interno do polígono " + calculaMedidaDoAnguloInterno());
     System.out.println("----------------");
   }
 
@@ -38,6 +32,10 @@ class Poligono {
 
   int calculaNumeroDiagonais() {
     return ((qntdLados*(qntdLados-3)/2));
+  }
+
+  int calculaMedidaDoAnguloInterno() {
+    return (calculaSomaDosAngulosInternos()/qntdLados);
   }
 
   void mostraNomeDoPoligono() {
