@@ -11,10 +11,19 @@ public class App {
     Locale.setDefault(Locale.US);
     Scanner input = new Scanner(System.in);
 
-    Ponto2D ponto = new Ponto2D();
+    Ponto2D pontoA = new Ponto2D();
+    Ponto2D pontoB = new Ponto2D();
 
-    ponto.inicializaDados("A", 2, 0);
-    ponto.mostraDados();
+    pontoA.inicializaDados("A", 2, 0);
+    pontoA.mostraDados();
+
+    System.out.println();
+
+    pontoB.inicializaDados("B", 4, 5);
+    pontoB.mostraDados();
+
+    System.out.println();
+    System.out.printf("A distância entre os dois pontos é: %.2f\n", pontoA.distanciaEntreDoisPontos(pontoB));
 
     input.close();
   }

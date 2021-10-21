@@ -3,6 +3,7 @@
  */
 
 package Lista2.Q2.Modelo1;
+import java.lang.Math;
 
 class Ponto2D {
   
@@ -28,6 +29,10 @@ class Ponto2D {
     else if (valorX != 0 && valorY == 0) return "abscissas";
     else if (valorX != 0 && valorY != 0) return "quadrante";
     else return "centro";
+  }
+
+  double distanciaEntreDoisPontos(Ponto2D ponto) {
+    return (Math.sqrt(Math.pow((ponto.valorX - valorX), 2) + Math.pow((ponto.valorY - valorY), 2)));
   }
 
   void mostraDados() {
