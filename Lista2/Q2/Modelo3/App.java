@@ -11,7 +11,10 @@ public class App {
     Locale.setDefault(Locale.US);
     Scanner input = new Scanner(System.in);
 
-    
+    Linha linha = new Linha();
+
+    linha.inicializaDados(0, 5, 0, 5);
+    linha.mostraDados();
 
     input.close();
   }
