@@ -13,7 +13,7 @@ public class App {
 
     HoraAproximada horaAproximada = new HoraAproximada();
 
-    horaAproximada.inicializaHora((byte) 23, (byte) 59);
+    horaAproximada.inicializaHora((byte) 0, (byte) 59);
     horaAproximada.mostraHora();
 
     input.close();
