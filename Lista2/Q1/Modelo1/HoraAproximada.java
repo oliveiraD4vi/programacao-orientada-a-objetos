@@ -4,17 +4,17 @@
 
 package Lista2.Q1.Modelo1;
 
-class HoraAproximada {
+public class HoraAproximada {
   
-  byte horas;
-  byte minutos;
+  public byte horas;
+  public byte minutos;
 
-  byte horasNow = 23;
-  byte minutosNow = 59;
+  public byte horasNow = 23;
+  public byte minutosNow = 59;
 
-  boolean horaValida;
+  public boolean horaValida;
 
-  void inicializaHora(byte h, byte m) {
+  public void inicializaHora(byte h, byte m) {
     if (horaEhValida(h, m)) {
       horas = h;
       minutos = m;
@@ -24,7 +24,7 @@ class HoraAproximada {
     }
   }
 
-  boolean horaEhValida(byte h, byte m) {
+  public boolean horaEhValida(byte h, byte m) {
     if (h <= 23 && h >= 0) {
       if (m <= 59 && m >= 0) {
         horaValida = true;
@@ -39,14 +39,14 @@ class HoraAproximada {
     }
   }
 
-  boolean horaEhAproximada() {
+  public boolean horaEhAproximada() {
     if ((horas <= horasNow && horas >= horasNow-1) || (horas >= horasNow && horas <= horasNow+1)) return true;
     else if (horas == 0 && horasNow == 23) return true;
     else if (horas == 23 && horasNow == 0) return true;
     else return false;
   }
 
-  void mostraHora() {
+  public void mostraHora() {
     if (horaValida) {
       if (horas < 10 && horas >= 0) {
         if (minutos < 10 && minutos >= 0) {
