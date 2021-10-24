@@ -11,7 +11,7 @@ public class App {
     Locale.setDefault(Locale.US);
     Scanner input = new Scanner(System.in);
 
-    Livro livro = new Livro();
+    LivroDeLivraria livro = new LivroDeLivraria();
 
     livro.inicializaDados("A Menina Que Roubava Livros", "Markus Zusak", "Intrínseca", "London", (short)2007, (float)45.99, (float)0.2, 1);
     livro.mostraDados();
