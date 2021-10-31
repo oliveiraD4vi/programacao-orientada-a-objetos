@@ -172,7 +172,10 @@ public class Data {
    * atributos e retorna sua referência.
    * @return referência do clone da data corrente
    */
-  // public Data clone() {
-  //   return data;
-  // }
+  public Data clone() {
+    Data cloneData = new Data();
+    cloneData.construtor(dia, mes, ano);
+
+    return cloneData;
+  }
 }
