@@ -6,63 +6,85 @@
 public class Voo {
 
   private int numeroDoVoo;
-  private Data data;
+  private Data data = new Data();
   private int[] assentos = new int[100];
 
   /**
-   * 
-   * @param numeroDoVoo
-   * @param data
+   * O método construtor define os dados passados por parâmetro.
+   * @param numeroDoVoo é o número do voo passado
+   * @param data é a data do voo em questão
    */
-  public void construtor(int numeroDoVoo, Data data) {
-
+  public void construtor(int numeroDoVoo, byte dia, byte mes, short ano) {
+    this.numeroDoVoo = numeroDoVoo;
+    this.data.construtor(dia, mes, ano);
+    for (int i = 0; i < 100; i++) assentos[i] = 0;
   }
 
   /**
-   * 
-   * @return
+   * O método proximoLivre retorna o número da próxima cadeira livre.
+   * @return próxima cadeira livre
    */
   public int proximoLivre() {
-    return 1;
+    int element = -1;
+    
+    for (int i = 0; i < 100; i++) {
+      if (assentos[i] == 0) {
+        element = i;
+        break;
+      }
+    }
+
+    return element;
   }
 
   /**
-   * 
-   * @param numeroDoAssento
-   * @return
+   * O método verifica testa se a cadeira, cujo número recebido como parâmetro, está ocupada.
+   * @param numeroDoAssento é o número do voo em questão
+   * @return true se ocupada, false se não ocupada
    */
   public boolean verifica(int numeroDoAssento) {
-    return true;
+    if (assentos[numeroDoAssento] == 0) return false;
+    else return true;
   }
 
   /**
-   * 
-   * @param numeroDoAssento
-   * @return
+   * O método ocupa ocupa determinada cadeira do voo, cujo número é recebido como parâmetro.
+   * @param numeroDoAssento é o número do voo em questão
+   * @return true se a cadeira ainda não estiver ocupada e falso caso contrário
    */
   public boolean ocupa(int numeroDoAssento) {
-    return true;
+    if (!verifica(numeroDoAssento)) {
+      assentos[numeroDoAssento] = 1;
+      return true;
+    } else return false;
   }
 
   /**
-   * 
-   * @return
+   * O método vagas retorna o número de cadeiras vagas disponı́veis.
+   * @return numero de vagas
    */
   public int vagas() {
-    return 10;
+    int vagas = 0;
+    
+    for (int i = 0; i < 100; i++) {
+      if (assentos[i] == 0)
+        vagas++;
+    }
+
+    return vagas;
   }
 
   /**
-   * 
-   * @return
+   * O método getVoo retorna o número do voo.
+   * @return o número do voo
    */
   public int getVoo() {
-    return 1;
+    return numeroDoVoo;
   }
 
   /**
-   * 
-   * @return
+   * O método getData retorna a data do voo.
+   * @return objeto data
    */
   public Data getData() {
     return data;
@@ -75,7 +97,7 @@ public class Voo {
    */
   public Voo clone() {
     Voo cloneVoo = new Voo();
-    cloneVoo.construtor(numeroDoVoo, data);
+    cloneVoo.construtor(numeroDoVoo, data.getDia(), data.getMes(), data.getAno());
 
     return cloneVoo;
   }
