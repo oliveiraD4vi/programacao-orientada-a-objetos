@@ -3,6 +3,8 @@
  * @author Davi Silva Alves de Oliveira
  */
 
+import java.lang.Math;
+
 public class NumeroComplexo {
 
   public double real;
@@ -33,7 +35,7 @@ public class NumeroComplexo {
    * passada como argumento, false se não.
    */
   public boolean ehIgual(NumeroComplexo num) {
-    if (real == num.real && imgn == num.imgn) return true;
+    if (this.real == num.real && this.imgn == num.imgn) return true;
     else return false;
   }
 
@@ -42,10 +44,13 @@ public class NumeroComplexo {
    * complexo com o encapsulado.
    * @param num é uma instância da classe NumeroComplexo a ser somada com os valo-
    * res encapsulados.
-   * @return resultado do cálculo efetuado.
+   * @return resultado do cálculo efetuado como string.
    */
-  public double soma (NumeroComplexo num) {
-    return (double) 1;
+  public String soma (NumeroComplexo num) {
+    double r = (this.real + num.real);
+    double i = (this.imgn + num.imgn);
+
+    return (r + " + " + i + "i");
   }
 
   /**
@@ -53,10 +58,13 @@ public class NumeroComplexo {
    * número complexo com o encapsulado.
    * @param num é uma instância da classe NumeroComplexo a ser subtraída dos valo-
    * res encapsulados.
-   * @return resultado do cálculo efetuado.
+   * @return resultado do cálculo efetuado como string.
    */
-  public double subtrai (NumeroComplexo num) {
-    return (double) 1;
+  public String subtrai (NumeroComplexo num) {
+    double r = (this.real - num.real);
+    double i = (this.imgn - num.imgn);
+
+    return (r + " + " + i + "i");
   }
 
   /**
@@ -64,10 +72,18 @@ public class NumeroComplexo {
    * número complexo com o encapsulado.
    * @param num é uma instância da classe NumeroComplexo a ser multiplicada com os 
    * valores encapsulados.
-   * @return resultado do cálculo efetuado.
+   * @return resultado do cálculo efetuado como string.
    */
-  public double multiplica (NumeroComplexo num) {
-    return (double) 1;
+  public String multiplica (NumeroComplexo num) {
+    double a = (this.real * num.real);
+    double b = (this.imgn * num.imgn);
+    double r = a - b;
+
+    a = (this.real * num.imgn);
+    b = (this.imgn * num.real);
+    double i = a + b;
+
+    return (r + " + " + i + "i");
   }
 
   /**
@@ -75,9 +91,18 @@ public class NumeroComplexo {
    * complexo com o encapsulado.
    * @param num é uma instância da classe NumeroComplexo a ser divididos dos valo-
    * res encapsulados.
-   * @return resultado do cálculo efetuado.
+   * @return resultado do cálculo efetuado como string.
    */
-  public double divide (NumeroComplexo num) {
-    return (double) 1;
+  public String divide (NumeroComplexo num) {
+    double a = (this.real * num.real);
+    double b = (this.imgn * num.imgn);
+    double c = (Math.pow(num.real, 2) + Math.pow(num.imgn, 2));
+    double r = (a + b)/c;
+
+    a = (this.imgn * num.real);
+    b = (this.real * num.imgn);
+    double i = (a - b)/c;
+
+    return (r + " + " + i + "i");  
   }
 }
