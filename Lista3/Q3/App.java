@@ -20,7 +20,7 @@ public class App {
     voo.construtor(num, dia, mes, ano);
 
     System.out.println();
-    if (voo.proximoLivre() != -1) {
+    if (voo.vagas() != 0) {
       System.out.println("Há " + voo.vagas() + " vagas livres neste voo.");
       System.out.println("Um assento será escolhido dentre os vagos. O próximo vago é o de número " + (voo.proximoLivre() + 1) + ".");
       voo.ocupa(voo.proximoLivre());
