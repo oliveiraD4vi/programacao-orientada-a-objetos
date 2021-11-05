@@ -1,3 +1,14 @@
+/**
+ * A classe Calculator representa uma calculadora com atributos de
+ * máximo da bateria, valor atual da bateria e o valor mostrado no
+ * display. Dessa forma, se tornam necessários os métodos para ca-
+ * rregar a bateria, para determinar se está ou não vazia e dois m
+ * étodos para cálculos, um de soma e um de divisão. Para além de-
+ * stes temos ainda o construtor e o método toString, cujas funçõe
+ * s já nos são conhecidas.
+ * @author Davi Silva Alves de Oliveira
+ */
+
 import java.text.DecimalFormat;
 
 public class Calculator {
