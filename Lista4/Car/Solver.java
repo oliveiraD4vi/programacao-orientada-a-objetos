@@ -10,6 +10,7 @@ public class Solver {
       String line = input.nextLine();
       String ui[] = line.split(" ");
       System.out.println("$" + line);
+
       if(ui[0].equals("end")) {
           break;
       } else if(ui[0].equals("in")) {

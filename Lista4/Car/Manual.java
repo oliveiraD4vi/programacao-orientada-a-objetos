@@ -1,7 +1,6 @@
 public class Manual {
   public static void main(String[] args) {
     Car car = new Car();
-    
     System.out.println(car);
     //pass: 0, gas: 0, km: 0
     car.in();
