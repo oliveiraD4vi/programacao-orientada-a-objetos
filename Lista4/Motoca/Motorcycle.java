@@ -1,3 +1,17 @@
+/**
+ * A classe Motorcycle representa uma moto infantil que só
+ * pode ser pilotada por crianças de 10 anos ou menos. Co-
+ * mo tal possui os atributos de power e time, que indicam
+ * a potência de inicialização da motocicleta e o tempo co
+ * mprado para andar no veículo. Além disso, utiliza-se um
+ * objeto da classe person para indicar o piloto da motoci
+ * cleta. Os métodos businar, embarcar, desembarcar, dirig
+ * ir e comprar são necessários para seu funcionamento. Pa
+ * ra além destes, temos ainda o método construtor e o toS
+ * tring, cuja finalidade já nos é conhecida.
+ * @author Davi Silva Alves de Oliveira
+ */
+
 public class Motorcycle {
   private Person person; //agregacao
   private int power;
