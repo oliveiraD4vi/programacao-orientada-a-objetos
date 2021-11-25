@@ -27,6 +27,9 @@ public class Grafite {
    * @return
    */
   int desgastePorFolha() {
-    return 4;
+    if (dureza == "HB") return 1;
+    else if (dureza == "2B") return 2;
+    else if (dureza == "4B") return 4;
+    else return 6;
   }
 }
