@@ -1,3 +1,7 @@
+/**
+ * @author Davi Silva Alves de Oliveira
+ */
+
 import java.util.LinkedList;
 
 class Trampoline{
@@ -5,15 +9,11 @@ class Trampoline{
   private LinkedList<Kid> playing = new LinkedList<Kid>();
 
   /**
-   * 
-   */
-  public Trampoline() {}
-
-  /**
-   * 
-   * @param name
-   * @param list
-   * @return
+   * O método remove_kid é utilizado pelo método remove para remover uma criança
+   * de uma lista específica.
+   * @param name é o nome da criança a ser buscada na lista
+   * @param list é a lista a ser iterada
+   * @return a criança retirada
    */
   private Kid remove_kid(String name, LinkedList<Kid> list) {
     Kid kid = new Kid(name, 10);
@@ -30,15 +30,15 @@ class Trampoline{
   }
   
   /**
-   * 
-   * @param kid
+   * O método arrive coloca uma criança na lista de espera
+   * @param kid é a criança a ser colocada na lista de espera
    */
   public void arrive(Kid kid) {
     waiting.addFirst(kid);
   }
   
   /**
-   * 
+   * O método in passa uma criança da lista de espera para a lista de playing
    */
   public void in() {
     playing.addFirst(waiting.getLast());
@@ -46,7 +46,7 @@ class Trampoline{
   }
   
   /**
-   * 
+   * O método out retira uma criança da lista de play para a lista de espera
    */
   public void out() {
     waiting.addFirst(playing.getLast());
@@ -54,9 +54,10 @@ class Trampoline{
   }
   
   /**
-   * 
-   * @param name
-   * @return
+   * O método remove retira a primeira criança que aparecer com o nome passado
+   * de uma lista ou de outra, o primeiro que aparecer
+   * @param name é o nome da criança a ser retirada
+   * @return a criança retirada
    */
   public Kid remove(String name) {
     Kid kid = new Kid("undefined", 0);
@@ -67,6 +68,9 @@ class Trampoline{
     return kid;
   }
   
+  /**
+   * O método toString retorna o objeto como uma string
+   */
   public String toString() {
     return ("=> " + waiting + " => " + playing);
   }
