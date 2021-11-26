@@ -1,3 +1,7 @@
+/**
+ * @author Davi Silva Alves de Oliveira
+ */
+
 import java.util.ArrayList;
 
 class Lapiseira {
@@ -6,8 +10,8 @@ class Lapiseira {
   ArrayList<Grafite> tambor = new ArrayList<Grafite>();
 
   /**
-   * 
-   * @param calibre
+   * O método Lapiseira é o construtor que seta os atributos do objeto
+   * @param calibre é o calibre da lapiseira a ser setado
    */
   Lapiseira(float calibre) {
     this.calibre = calibre;
@@ -15,7 +19,7 @@ class Lapiseira {
   }
   
   /**
-   * 
+   * O método toString retorna o objeto como uma string
    */
   public String toString() {
     if (bico != null)
@@ -25,9 +29,9 @@ class Lapiseira {
   }
   
   /**
-   * 
-   * @param grafite
-   * @return
+   * O método inserir põe um grafite na lapiseira
+   * @param grafite é o objeto grafite a ser inserido na lapiseira
+   * @return true se der certo, false se não
    */
   boolean inserir(Grafite grafite) {
     if (calibre == grafite.calibre) {
@@ -40,8 +44,8 @@ class Lapiseira {
   }
   
   /**
-   * 
-   * @return
+   * O método remover remove o grafite da lapiseira
+   * @return o objeto Grafite retirado
    */
   Grafite remover() {
     Grafite aux = new Grafite((float)0.5, "2B", 50);
@@ -52,8 +56,8 @@ class Lapiseira {
   }
 
   /**
-   * 
-   * @return
+   * O método puxar puxa um grafite do tambor para o bico
+   * @return true se der certo, false se não
    */
   boolean puxar() {
     if (tambor != null) {
@@ -72,7 +76,7 @@ class Lapiseira {
   }
   
   /**
-   * 
+   * O método escrever utiliza o grafite e diminuir seu tamanho conforme o uso
    */
   void escrever() {
     if (bico != null) {
