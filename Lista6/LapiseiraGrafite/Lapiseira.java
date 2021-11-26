@@ -1,10 +1,14 @@
+/**
+ * @author Davi Silva Alves de Oliveira
+ */
+
 class Lapiseira {
   float calibre;
   Grafite grafite;
 
   /**
-   * 
-   * @param calibre
+   * O método Lapiseira é o construtor que seta os atributos do objeto
+   * @param calibre é o calibre da lapiseira a ser setado
    */
   Lapiseira(float calibre) {
     this.calibre = calibre;
@@ -12,16 +16,16 @@ class Lapiseira {
   }
   
   /**
-   * 
+   * O método toString retorna o objeto como uma string
    */
   public String toString() {
     return ("calibre: " + calibre + ", grafite: " + grafite);
   }
   
   /**
-   * 
-   * @param grafite
-   * @return
+   * O método inserir põe um grafite na lapiseira
+   * @param grafite é o objeto grafite a ser inserido na lapiseira
+   * @return true se der certo, false se não
    */
   boolean inserir(Grafite grafite) {
     if (calibre == grafite.calibre) {
@@ -37,8 +41,8 @@ class Lapiseira {
   }
   
   /**
-   * 
-   * @return
+   * O método remover remove o grafite da lapiseira
+   * @return o objeto Grafite retirado
    */
   Grafite remover() {
     Grafite aux = new Grafite((float)0.5, "2B", 50);
@@ -49,7 +53,7 @@ class Lapiseira {
   }
   
   /**
-   * 
+   * O método escrever utiliza o grafite e diminuir seu tamanho conforme o uso
    */
   void escrever() {
     if (grafite.tamanho <= 10) {
