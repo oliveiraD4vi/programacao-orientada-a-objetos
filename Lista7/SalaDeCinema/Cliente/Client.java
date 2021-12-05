@@ -18,14 +18,15 @@ public class Client {
    * 
    */
   public String toString() {
-    return ("cliente");
+    if (getId() == "") return ("-");
+    else return (getId() + ":" + getFone());
   }
   
   /**
    * 
    * @return
    */
-  String getId() {
+  public String getId() {
     return this.id;
   }
   
@@ -41,7 +42,7 @@ public class Client {
    * 
    * @return
    */
-  String getFone() {
+  public String getFone() {
     return this.fone;
   }
   

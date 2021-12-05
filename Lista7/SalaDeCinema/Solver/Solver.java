@@ -1,7 +1,7 @@
 package Solver;
 import java.util.Scanner;
 
-import Sala.Sala;
+import Sala.*;
 
 class Solver {
   public static void main(String[] args) {
