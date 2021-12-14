@@ -44,7 +44,18 @@ public class Conta {
   //se o índice for válido e representar uma operação de tarifa
   //adicione o mesmo valor tarifado, mas com label de extorno
   public boolean extornar(int indice) {
-    return true;
+    if (financas.getExtrato().size() > indice) {
+      if ((financas.getExtrato().get(indice).getLabel().getName()).equals("tarifa")) {
+        financas.addOperacao(Label.extorno, financas.getExtrato().get(indice).getValue() * -1);
+        return true;
+      } else {
+        System.out.println("fail: indice " + indice + " nao e tarifa");
+        return false;
+      }
+    } else {
+      System.out.println("fail: indice " + indice + " invalido");
+      return false;
+    }
   }
   
   //adiciona valor à conta

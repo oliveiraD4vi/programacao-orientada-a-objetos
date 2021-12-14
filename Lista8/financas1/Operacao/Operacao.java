@@ -25,10 +25,10 @@ public class Operacao {
   int getIndice() {
       return this.indice;
   }
-  Label getLabel() {
+  public Label getLabel() {
       return this.label;
   }
-  int getValue() {
+  public int getValue() {
       return this.value;
   }
   int getSaldo() {
