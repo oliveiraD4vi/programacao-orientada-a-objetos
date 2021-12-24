@@ -13,9 +13,9 @@ public class Fone {
   private String number;
   
   /**
-   * 
-   * @param id
-   * @param number
+   * O construtor Fone iniciar os atributos da classe Fone.
+   * @param id é a label de identificação do número
+   * @param number é o número
    */
   public Fone(String id, String number) {
     setId(id);
@@ -23,58 +23,60 @@ public class Fone {
   }
   
   /**
-   * 
-   * @param number
-   * @return
+   * O método validate() determinar se o numero passado é válido.
+   * @param number é o número a ser testado
+   * @return true se sim, false se não
    */
   public static boolean validate(String number) {
     return true;
   }
   
   /**
-   * 
+   * O método toString() retorna a classe Fone em formato de string.
    */
   public String toString() {
     return (getId() + ":" + getNumber());
   }
   
   /**
-   * 
-   * @return
+   * O método getId() retorna a label de identificação do número.
+   * @return atributo id
    */
   public String getId() {
     return this.id;
   }
   
   /**
-   * 
-   * @param id
+   * O méotod setId() seta a label de identificação
+   * do número.
+   * @param id é a label a ser setada
    */
   public void setId(String id) {
     this.id = id;
   }
   
   /**
-   * 
-   * @return
+   * O método getNumber() retorna o número
+   * @return atributo number
    */
   public String getNumber() {
     return this.number;
   }
   
   /**
-   * 
-   * @param number
+   * O método setNumber() seta o número do fone.
+   * @param number é o número a ser setado
    */
   public void setNumber(String number) {
     this.number = number;
   }
   
   /**
-   * 
-   * @return
+   * O método isValid() utiliza a static validate() para determinar
+   * se o numero é válido ou não.
+   * @return o valor retornado de validate()
    */
   public boolean isValid() {
-    return validate(this.number);
+    return validate(getNumber());
   }
 }

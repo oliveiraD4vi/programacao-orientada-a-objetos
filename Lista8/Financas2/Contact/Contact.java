@@ -16,9 +16,9 @@ public class Contact {
   protected String prefix = "-"; //utilizado no toString
   
   /**
-   * 
-   * @param name
-   * @param fones
+   * O método construtor Contact inicia os atributos da classe
+   * @param name é o nome do contato
+   * @param fones é a lista de fones do contato
    */
   public Contact(String name, List<Fone> fones) {
     setName(name);
@@ -26,8 +26,8 @@ public class Contact {
   }
   
   /**
-   * 
-   * @param fone
+   * O método addFone() adiciona um fone à lista de fones.
+   * @param fone é o fone a ser adicionado
    */
   public void addFone(Fone fone) {
     if (fone.isValid())
@@ -37,8 +37,9 @@ public class Contact {
   }
   
   /**
-   * 
-   * @param index
+   * O método rmFone() remove um determinado telefone da lista de fones
+   * a partir do índice desse fone
+   * @param index é o índice a ser retirado da lista
    */
   public void rmFone(int index) {
     if (index < fones.size())
@@ -48,7 +49,7 @@ public class Contact {
   }
   
   /**
-   * 
+   * O método toString() retorna a classe Contact como string.
    */
   public String toString() {
     StringBuffer stringBuffer = new StringBuffer();
@@ -71,32 +72,32 @@ public class Contact {
   }
   
   /**
-   * 
-   * @return
+   * O método getName() retorna o nome do contato.
+   * @return atributo name
    */
   public String getName() {
     return this.name;
   }
   
   /**
-   * 
-   * @param name
+   * O método setName() seta o nome do contato.
+   * @param name é o nome a ser setado
    */
   public void setName(String name) {
     this.name = name;
   }
   
   /**
-   * 
-   * @return
+   * O método getFones() retorna a lista de fones do contato.
+   * @return atributos fones
    */
   public List<Fone> getFones() {
     return this.fones;
   }
   
   /**
-   * 
-   * @param fones
+   * O método setFones() seta a lista de telefones de um contato.
+   * @param fones é a lista a ser setada
    */
   public void setFones(List<Fone> fones) {
     for (int i = 0; i < fones.size(); i++)
