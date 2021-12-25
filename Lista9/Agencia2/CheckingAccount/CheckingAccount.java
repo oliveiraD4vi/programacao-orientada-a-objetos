@@ -1,5 +1,6 @@
 /**
- * A classe CheckingAccount...
+ * A classe CheckingAccount é uma subclasse da classe Account que determina uma
+ * conta do tipo corrente.
  * @author Davi Silva Alves de Oliveira
  */
 
@@ -7,22 +8,22 @@ package CheckingAccount;
 
 import Account.Account;
 
-class CheckingAccount extends Account {
-  //inicializa conta.type com "CC"
+public class CheckingAccount extends Account {
   /**
-   * 
-   * @param id
-   * @param idClient
+   * O método construtor SavingsAccount() inicia os valores da superclasse Account e
+   * determina o tipo de conta como CC (conta corrente).
+   * @param id é o id a ser inserido
+   * @param idClient é o nome do cliente
    */
   public CheckingAccount(int id, String idClient) {
     super(id, idClient);
+    setType("CC");
   }
   
-  //retira 20 do saldo
   /**
-   * 
+   * O método monthlyUpdate retira 20 do saldo.
    */
   public void monthlyUpdate() {
-
+    withdraw(20);
   }
 }
