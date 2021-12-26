@@ -64,7 +64,7 @@ public class Client {
    * cliente.
    * @return atributo accounts
    */
-  List<Account> getAccounts() {
+  public List<Account> getAccounts() {
     return accounts;
   }
   
