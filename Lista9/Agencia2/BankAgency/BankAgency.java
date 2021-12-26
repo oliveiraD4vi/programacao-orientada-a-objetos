@@ -1,3 +1,12 @@
+/**
+ * A classe BankAgency representa a agência de um determinado ba
+ * nco que possui clientes e contas associadas a esses clientes.
+ * O id da conta destes clientes é proposto por uma única variáv
+ * el que é sempre incrementada quando uma nova conta é adiciona
+ * da nesta agência.
+ * @author Davi Silva Alves de Oliveira
+ */
+
 package BankAgency;
 
 import Client.Client;
