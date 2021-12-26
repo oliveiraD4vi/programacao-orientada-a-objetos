@@ -8,6 +8,8 @@
 
 package Account;
 
+import AccountException.AccountException;
+
 abstract public class Account {
   protected int id;
   protected float balance;
@@ -34,7 +36,12 @@ abstract public class Account {
    * @param value é o valor a ser retirado
    */
   public void withdraw(float value) {
-    this.balance = this.balance - value;
+    if (getBalance() - value >= 0)
+      this.balance = this.balance - value;
+    else {
+      AccountException exception = new AccountException("fail: saldo insuficiente");
+      exception.printStackTrace();
+    }
   }
   
   /**
@@ -51,8 +58,13 @@ abstract public class Account {
    * @param value valor a ser transferido
    */
   public void transfer(Account other, float value) {
-    this.balance = this.balance - value;
-    other.deposit(value);
+    if (getBalance() - value >= 0) {
+      this.balance = this.balance - value;
+      other.deposit(value);
+    } else {
+      AccountException exception = new AccountException("fail: saldo insuficiente");
+      exception.printStackTrace();
+    }
   }
   
   /**

@@ -13,9 +13,9 @@ public class BankAgency {
   private int nextAccountId = 0;
   
   /**
-   * 
-   * @param id
-   * @return
+   * O método getAccount() busca a e retorna a conta procurada.
+   * @param id é o id da conta procurada
+   * @return o objeto Account encontrado na lista
    */
   private Account getAccount(int id) {
     Account account = new SavingsAccount(-1, "undefined");
@@ -28,7 +28,7 @@ public class BankAgency {
     if (account.getId() != -1)
       return account;
     else {
-      AccountException exception = new AccountException("fail: conta não existe");
+      AccountException exception = new AccountException("fail: conta nao encontrada");
       exception.printStackTrace();
       return account;
     }
@@ -68,7 +68,10 @@ public class BankAgency {
       accounts.put(getNextId(), accountCP);
       newClient.addAccount(accountCP);
       setNextId();
-    } else System.out.println("fail: cliente já existe");
+    } else {
+      AccountException exception = new AccountException("fail: cliente ja existe");
+      exception.printStackTrace();
+    }
   }
   
   /**
@@ -77,7 +80,8 @@ public class BankAgency {
    * @param value é o valor a ser sacado
    */
   public void withdraw(int idConta, float value) {
-    getAccount(idConta).withdraw(value);
+    if (getAccount(idConta).getId() != -1)
+      getAccount(idConta).withdraw(value);
   }
   
   /**
@@ -86,7 +90,8 @@ public class BankAgency {
    * @param value é o valor a ser depositado
    */
   public void deposit(int idConta, float value) {
-    getAccount(idConta).deposit(value);
+    if (getAccount(idConta).getId() != -1)
+      getAccount(idConta).deposit(value);
   }
   
   /**
@@ -96,7 +101,8 @@ public class BankAgency {
    * @param value é o valor a ser transferido
    */
   public void transfer(int contaDe, int contaPara, float value) {
-    getAccount(contaDe).transfer(getAccount(contaPara), value);
+    if (getAccount(contaDe).getId() != -1 && getAccount(contaPara).getId() != -1)
+      getAccount(contaDe).transfer(getAccount(contaPara), value);
   }
   
   /**

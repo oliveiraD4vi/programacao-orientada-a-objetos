@@ -24,6 +24,6 @@ public class CheckingAccount extends Account {
    * O método monthlyUpdate retira 20 do saldo.
    */
   public void monthlyUpdate() {
-    withdraw(20);
+    this.balance = this.balance - 20;
   }
 }
