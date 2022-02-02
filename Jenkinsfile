@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Inicializar/Mensagem') {
       steps {
-        echo 'Esta é a pipeline teste'
+        echo 'Esta Ã© a pipeline teste'
+        mail(subject: '[Jenkins] Iniciando pipeline', body: 'Estamos iniciando a pipeline')
       }
     }
 
