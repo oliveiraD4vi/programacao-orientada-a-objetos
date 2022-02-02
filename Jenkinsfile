@@ -8,5 +8,12 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        echo 'Esse é o stage test'
+        sleep(time: 10, unit: 'MINUTES')
+      }
+    }
+
   }
 }
